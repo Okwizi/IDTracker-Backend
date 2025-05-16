@@ -3,3 +3,4 @@ pyright==1.1.400
 pre-commit==4.2.0
 conventional-pre-commit==4.2.0
 tox==4.26.0
+setuptools>=75.1.0

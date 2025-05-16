@@ -28,7 +28,7 @@ Pipfile.lock
 
 # coverage
 .coverage
-.coverage.*
+coverage.*
 
 # Project
 database/
