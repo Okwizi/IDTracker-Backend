@@ -19,7 +19,7 @@ exclude = [
     "dist",
     "docs",
     "venv",
-    "sil_recon/**/migrations/*",
+    "id_tracker/**/migrations/*",
     ".pytest_cache",
     "grpc/**"
 ]
@@ -39,7 +39,7 @@ convention = "google"
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "tests.config.settings"
 python_files = ["test_*.py", "*_test.py", "tests/*.py"]
-addopts = "--cov=sil_recon --cov-report=xml --cov-report=term-missing --durations=20 --show-capture=all --cache-clear --failed-first -n auto -v"
+addopts = "--cov=id_tracker --cov-report=xml --cov-report=term-missing --durations=20 --show-capture=all --cache-clear --failed-first -n auto -v"
 minversion = "8.3.3"
 
 
@@ -51,10 +51,10 @@ branch = true
 fail_under = 100
 show_missing = true
 omit = [
-    "docs/*", "tests/*", "sil_recon/config/**",
+    "docs/*", "tests/*", "id_tracker/config/**",
     "sil_recon/**/migrations/*", "*__init__.py",
-    "_version.py", "sil_recon/grpc/**",
-    "sil_recon/drf_spec_extensions/**"
+    "_version.py", "id_tracker/grpc/**",
+    "id_tracker/drf_spec_extensions/**"
 ]
 
 
@@ -67,6 +67,6 @@ exclude = [
     "venv/**",
     "**/__pycache__",
     "docs/*",
-    "sil_recon/grpc/*"
+    "id_tracker/grpc/*"
 ]
 

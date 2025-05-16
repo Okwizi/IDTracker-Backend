@@ -32,10 +32,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "id_tracker",
     "rest_framework",
     "corsheaders",
 ]
+
+LOCAL_APPS = [
+    "id_tracker",
+]
+
+INSTALLED_APPS += LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -58,7 +63,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 
 
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "id_tracker.config.urls"
 
 TEMPLATES = [
     {
@@ -76,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "config.wsgi.application"
+WSGI_APPLICATION = "id_tracker.config.wsgi.application"
 
 
 # Database
