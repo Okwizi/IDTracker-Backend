@@ -7,15 +7,14 @@ exclude = [
     ".cache",
     ".git",
     "manage.py",
-    "sil_recon/**/migrations/*",
+    "id_tracker/**/migrations/*",
     ".pytest_cache",
     "setup.py",
-    "sil_recon/grpc",
+    "id_tracker/grpc",
     "_version.py"
 ]
 
 [lint]
-
 extend-select = [
     # flake8-comprehensions
     "C4",
