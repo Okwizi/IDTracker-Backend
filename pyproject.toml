@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=75.1.0"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.ruff]
+exclude = [
+    ".eggs",
+    ".git",
+    ".nox",
+    ".pytype",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "__pycache__",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "docs",
+    "venv",
+    "sil_recon/**/migrations/*",
+    ".pytest_cache",
+    "grpc/**"
+]
+line-length = 79
+
+
+[tool.ruff.lint]
+extend-select = ["E501", "B", "D", "I"]
+unfixable = ["B"]
+exclude = ["grpc/**"]
+
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.config.settings"
+python_files = ["test_*.py", "*_test.py", "tests/*.py"]
+addopts = "--cov=sil_recon --cov-report=xml --cov-report=term-missing --durations=20 --show-capture=all --cache-clear --failed-first -n auto -v"
+minversion = "8.3.3"
+
+
+[tool.coverage.run]
+branch = true
+
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+omit = [
+    "docs/*", "tests/*", "sil_recon/config/**",
+    "sil_recon/**/migrations/*", "*__init__.py",
+    "_version.py", "sil_recon/grpc/**",
+    "sil_recon/drf_spec_extensions/**"
+]
+
+
+[tool.coverage.html]
+directory = "coverage"
+
+
+[tool.pyright]
+exclude = [
+    "venv/**",
+    "**/__pycache__",
+    "docs/*",
+    "sil_recon/grpc/*"
+]
+
