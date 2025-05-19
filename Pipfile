@@ -12,6 +12,8 @@ django-cors-headers = "4.7.0"
 psycopg = "3.2.9"
 uv = "0.7.3"
 ipython = "9.2.0"
+qrcode = "8.2"
+pyopt = "2.9.0"
 
 [dev-packages]
 

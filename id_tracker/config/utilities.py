@@ -1,5 +1,7 @@
-import os
+"""Utilities for configurations."""
+
 import ast
+import os
 
 
 def get_bool_env(env_var_name: str, default: str = "False") -> bool:

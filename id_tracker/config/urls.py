@@ -1,3 +1,5 @@
+"""URLs"""
+
 from django.contrib import admin
 from django.urls import path
 
@@ -14,7 +16,7 @@ urlpatterns = [
         "send-notification/", views.send_notification, name="send-notification"
     ),
     path("get-notification/", views.get_notification, name="get-notification"),
-    # path('api/register/', views.registerTwoFactor, name='register_two_factor'),
+    # path('api/register/',views.registerTwoFactor, name='register_two_factor')
     # path('api/register/', views.register, name='register'),
     # path('api/verify/', views.verify, name='verify'),
     # path('api/validate/', views.validate, name='validate'),
