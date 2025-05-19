@@ -24,7 +24,7 @@ format:
 
 .PHONY: type_check
 type_check:
-	pyright app/
+	pyright id_tracker/
 
 .PHONY: clean
 clean:

@@ -1,10 +1,10 @@
 """Test settings for pytest."""
 
-from django.db.backends.postgresql.psycopg_any import (IsolationLevel)
+from django.db.backends.postgresql.psycopg_any import IsolationLevel
 
-from id_tracker.config.settings import *
+from id_tracker.config.settings import *  # noqa
 
-in_github_ci = get_bool_env("GITHUB_CI")
+in_github_ci = get_bool_env("GITHUB_CI")  # noqa
 
 ENVIRONMENT = "test"
 DEBUG = False
