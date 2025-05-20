@@ -32,3 +32,11 @@ coverage.*
 
 # Project
 database/
+
+# Tox
+.tox*
+
+# packaging
+*.egg*
+dist
+build
