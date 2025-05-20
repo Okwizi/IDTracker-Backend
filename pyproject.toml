@@ -1,6 +1,65 @@
 [build-system]
-requires = ["setuptools>=75.1.0"]
+requires = ["setuptools>=80.7.1", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+[tool.setuptools]
+packages = ["id_tracker"]
+
+[project]
+dynamic = ["version"]
+name = "id-tracker"
+description = "A Django app for tracking lost and found ID cards."
+dependencies = [
+    "django>=5.2.1",
+    "djangorestframework>=3.16.0",
+    "django-extensions>=4.1",
+    "firebase-admin>=6.8.0",
+    "django-cors-headers>=4.7.0",
+    "psycopg>=3.2.9",
+    "uv>=0.7.3",
+    "ipython>=9.2.0",
+    "qrcode>=8.2",
+    "pyopt",
+    "git-changelog"
+]
+requires-python = ">=3.12"
+authors = [
+    { name = "Michael Owiso", email = "okwizifr@gmail.com"}
+]
+maintainers = [
+    { name = "Michael Owiso", email = "okwizifr@gmail.com"}
+]
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+keywords = [
+    "django",
+    "id-tracker",
+    "lost-and-found",
+    "django-app",
+    "firebase",
+    "django-rest-framework",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: C",
+    "Framework :: Django :: 5.2",
+    "Environment :: Web Environment",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/Okwizi/IDTracker-Backend"
+Repository = "https://github.com/Okwizi/IDTracker-Backend.git"
+Issues = "https://github.com/Okwizi/IDTracker-Backend/issues"
 
 
 [tool.ruff]
@@ -21,20 +80,61 @@ exclude = [
     "venv",
     "id_tracker/**/migrations/*",
     ".pytest_cache",
-    "grpc/**"
+    "grpc/**",
 ]
 line-length = 79
 
-
 [tool.ruff.lint]
-extend-select = ["E501", "B", "D", "I"]
-unfixable = ["B"]
-exclude = ["grpc/**"]
+extend-select = [
+    # flake8-comprehensions
+    "C4",
 
+    # flake8-simplify
+    "SIM",
 
-[tool.ruff.lint.pydocstyle]
-convention = "google"
+    # flake8-type-checking
+    "TC",
 
+    # flake8-debugger
+    "T10",
+
+    # flake8-print
+    "T20",
+
+    # flake8-bugbear
+    # "B",
+
+    # isort
+    "I",
+
+    # pycodestyle
+    "E",
+
+    # flake8-warnings
+    "W",
+
+    # Pyflakes
+    "F",
+
+    # missing docstrings
+    "D1",
+
+    # docstrings style (multi-line-summary-first-line)
+    "D212",
+
+    # type hints and checks
+    "ANN",
+]
+unfixable = ["ALL"]
+per-file-ignores = {"tests/*.py" = ["ANN201", "ANN101", "ANN001"], "manage.py" = ["ALL"]}
+
+pydocstyle = {convention = "google"}
+mccabe = {max-complexity = 10}
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "tests.config.settings"
