@@ -61,6 +61,9 @@ Homepage = "https://github.com/Okwizi/IDTracker-Backend"
 Repository = "https://github.com/Okwizi/IDTracker-Backend.git"
 Issues = "https://github.com/Okwizi/IDTracker-Backend/issues"
 
+[project.scripts]
+id_manage = "id_tracker.bin.id_manage:main"
+
 
 [tool.ruff]
 exclude = [
@@ -125,7 +128,7 @@ extend-select = [
     # type hints and checks
     "ANN",
 ]
-unfixable = ["ALL"]
+fixable = ["ALL"]
 per-file-ignores = {"tests/*.py" = ["ANN201", "ANN101", "ANN001"], "manage.py" = ["ALL"]}
 
 pydocstyle = {convention = "google"}
@@ -169,4 +172,3 @@ exclude = [
     "docs/*",
     "id_tracker/grpc/*"
 ]
-
