@@ -26,7 +26,12 @@ INSTALLED_APPS = [
 ]
 
 LOCAL_APPS = [
-    "id_tracker",
+    "student",
+    "course",
+    "department",
+    "school",
+    "notification",
+    "admin",
 ]
 
 INSTALLED_APPS += LOCAL_APPS
